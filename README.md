@@ -1,21 +1,78 @@
 # BasicPyrogramBot
 Basic Template for Bot with Pyrogram and Python. This Template is For Beginners like me ;) 
 
-### ![MissLivvyBot](https://telegra.ph/file/963bce66776c0d97be950.jpg)
-
-**This Bot Can Be Deployed to Heorku and Railway easily. **
+**This Bot Can Be Deployed on `VPS`, to Heorku and Railway easily. **
 
 ## Deployment
 Plz give it a star
 
 ## The Easy Way ⚡️
-### With Heroku
-<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/exploiterxD/BasicPyrogramBot"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-black?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
+### Deploy on `VPS`
+- Fork and star the repo
+- Go to main then edit ```config.py``` as below
+- Put respective values in `""` and save.
 
-### With Railway
+```
+API_ID = ""
+API_HASH = ""
+BOT_TOKEN = ""
+```
 
-<p align="center"><a href="https://railway.app/new/template?template=https://github.com/exploiterxD/BasicPyrogramBot&envs=BOT_TOKEN,API_ID,API_HASH">Deploy On Railway</a></p>
+- Now run following commands one by one...
+
+```
+sudo apt update
+sudo apt install git python3-pip
+git clone your_repo_link
+cd you_repo_name
+pip3 install -r requirements.txt
+python3 -m PyroBot
+```
+
+- if you want bot to be running in background then enter `screen -S PyroBot` before `python3 -m PyroBot` 
+- after `python3 -m PyroBot`, click `ctrl+A`, `ctrl+D`
+- if you want to stop bot, then enter `screen -r PyroBot` and to kill screen enter `screen -S PyroBot -X quit`.
 
 
-### With Zeet
-<p align="center"><a href="https://zeet.co/new/template/exploiterxD/BasicPyrogramBot"><img src="https://user-images.githubusercontent.com/77770753/119371372-fe917900-bcd3-11eb-8db5-f5e8063cdd1c.jpg" width="94" height="28"></a></p>
+## Deploy your bot on `heroku`
+
+» Method - 1:
+- Star the repo, and fork it in desktop mode
+- Click on  [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+- Fill your values and done ✅
+ 
+» Method - 2:
+- Star the repo, rate and fork it in desktop mode
+- create app in heroku
+- go to settings of ```app›› reveal config vars››``` add all variables as shown above by typing their correct name and value.
+- add buildpacks i.e. `python` and `https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git`
+- connect to github and deploy
+- turn on dynos
+- Note: you must add buildpack in heroku to get the original video thumbnail and to remove already set thumbnail otherwise you will get black video
+<b> How to add? </b>
+- Go to heroku settings
+- scroll down and click add buildpack
+- now paste following link i.e `https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git` in input bar and click add buildpack
+- Now go back and redeploy
+
+
+## Deploy on Render
+- Fork and star the repo
+- edit `config.py` same as guided for VPS deployment (you can edit on render also by filling enviroment variables)
+- Go to render.com and singup/signin
+- create new web service and select free plan
+- connect github and your repository
+- Click Deploy
+- Done ✅
+- See tutorial
+
+
+## Koyeb Deployment
+
+- Fork and star the repo
+- edit `config.py` same as guided for VPS deployment (you can edit on koyeb also by filling enviroment variables)
+- Go to koyeb.com and singup/signin
+- create new web service make sure you must choose build type `Dokerfile` because in Koyeb as a default it is checked to `buildpacks` so you have to change that.
+- connect github and your repository
+- Click Deploy
+- Done ✅
